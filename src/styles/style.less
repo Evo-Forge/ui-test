@@ -1,0 +1,43 @@
+@import "bootstrap/bootstrap.less";
+
+.panel
+{
+	.panel-heading.navbar
+	{
+		@halfPad: extract(@panel-heading-padding, 1)/2;
+		padding-top: @halfPad;
+		padding-bottom: @halfPad;
+	}
+	.navbar
+	{
+		margin: 0;
+		border-radius: inherit;
+		border-bottom-right-radius: 0;
+		border-bottom-left-radius: 0;
+		border: none;
+	}
+	.navbar-nav li
+	{
+		&.active
+		{ 
+			color: @navbar-default-link-active-color;
+			a, a:hover
+			{ 
+				background: none; 
+				text-decoration: underline;
+			}
+		}
+	}
+	.navbar-nav a
+	{
+		cursor: pointer;
+	}
+	.navbar-form
+	{
+		&:first-child{ padding-left: 0; }
+	}
+	th
+	{
+		text-transform: capitalize;
+	}
+}

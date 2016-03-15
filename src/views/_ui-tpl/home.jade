@@ -1,0 +1,31 @@
+.container#homeCtrl(ng-controller="HomeCtrl")
+
+  .panel.panel-info
+    .panel-heading.navbar.navbar-default
+      form.navbar-form.navbar-left
+        .form-group
+          input.form-control(type="search", ng-model="query", ng-model-options="{ debounce: 300 }", placeholder="filter...", )
+      p.navbar-text(ng-if="selected.ids|keysLength") {{selected.ids|keysLength}} items selected
+      ul.nav.navbar-nav.navbar-right
+        li(ng-repeat="k in [20, 100, 250, 500, 1000]", ng-class="{active: maxRows==k}") 
+          a(ng-click="setMaxRows(k)") 
+            span(ng-if="maxRows==k") Loaded {{::k}} 
+            span(ng-if="maxRows!=k") Load {{::k}}
+    
+    table.table
+      thead
+        tr
+          th: input(type="checkbox", ng-model="checkAll", ng-false-value="undefined")
+          th(ng-repeat="col in cols") {{::col|prettyColHeader}}
+
+      tbody(table-chunk="row in data| limitTo: maxRows | filter:query as filteredRows")
+        td
+          input(type="checkbox", ng-model="selected.ids[row.id]", ng-false-value="undefined")
+        td(ng-repeat="(i, col) in cols") {{row[col]}}
+
+      //- tbody
+      //-   tr(ng-repeat="row in data | limitTo: maxRows | filter:query as filteredRows")
+      //-     td
+      //-       input(type="checkbox", ng-model="selected.ids[row.id]", ng-false-value="undefined")
+      //-     td(ng-repeat="(i, col) in cols") {{row[col]}}
+
