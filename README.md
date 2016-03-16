@@ -33,7 +33,6 @@ The top havigation has multiple buttons to load or remove all rows, those button
 
 
 ####  Design
-pretier
 Try to maintain the current design. Or if you can surprise us with something prettier we won't say no :)
 
 #### Things you should have in mind
