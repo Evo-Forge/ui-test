@@ -8,7 +8,8 @@ The index page will just rendered by `express` on request, from a `jade` templat
 
 Run `npm install` in your project path to get all the required modules
 Make sure you have a webdriver installed for e2e tests
-Run the app using `node`
+Run the app using `node index.js`
+
 
 #### Application flow (`src/scripts`):
 The main JS application will be using `RequireJS` as an AMD loader.
@@ -30,7 +31,10 @@ The main JS application will be using `RequireJS` as an AMD loader.
 
 #### Testing
 Testing is done via dedicated `grunt` tasks
-- `grunt unit`
+- Unit tests - run `grunt unit`
+- E2E tests - open the selenium server `webdriver-manager start` and run `grunt e2e`
+
+- - -
 
 > # Practical application test
 > 
