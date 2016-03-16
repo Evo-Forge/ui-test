@@ -8,7 +8,7 @@ module.exports = function(grunt)
 
 		express: 
     {
-      admin:{ options: { port: 7357, script: 'index.js' } }
+      test:{ options: { port: 7357, script: 'index.js' } }
     },
     karma: 
     { 
@@ -19,12 +19,11 @@ module.exports = function(grunt)
     { 
       options: { configFile: 'test/protractor.conf.js', keepAlive: true, webdriverManagerUpdate: true },
       e2e: {}
-    },
-    protractor_webdriver: { options: { keepAlive:true }, e2e: {} }
+    }
 
   });
 
-  grunt.registerTask('unit', [ 'karma' ]);
-  grunt.registerTask('e2e', [ 'express:test', 'protractor_webdriver', 'protractor' ]);
+  grunt.registerTask('unit', [ 'express:test', 'karma' ]);
+  grunt.registerTask('e2e', [ 'express:test', 'protractor' ]);
 
 }

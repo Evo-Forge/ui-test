@@ -1,6 +1,6 @@
 define(['angular'], function(angular)
 {
-	(function(angularModule) 
+	(function(angularModule) // add angular list of modules to it
 	{
     angular.modules = [];
     angular.module = function() 
@@ -57,6 +57,7 @@ define(['angular'], function(angular)
 							// update module queue list length
 							moduleQueueLen[result[i].name] = result[i]._invokeQueue.length; 
 							// run blocks :))
+							// TODO: add this to some queue beacause it's getting called a zillion times!
 							for (var j = result[i]._runBlocks.length - 1; j >= 0; j--)
 								providers.$injector.invoke(result[i]._runBlocks[j]);
 						};

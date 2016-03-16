@@ -16,40 +16,9 @@ function homeControllerModule( angular, dataSrvMod, table, indet )
 		function($scope, $timeout, api)
 	{
 		$scope.data = []; // table data
-		$scope.maxRows = 3; // max display rows
+		$scope.maxRows = 20; // max display rows
 		$scope.cols = []; // table cols
 		
-		// compat
-		// if(!Proxy) Object.observe($scope.selected.ids, changes => 
-		// {
-		// 	for( let change of changes ) 
-		// 		if( change.object[change.name] == undefined ) 
-		// 			$timeout(()=>delete change.object[change.name]);
-		// })
-		// else
-		// {
-		// 	let selectedIdsHandler = 
-		// 	{
-		// 		set: (obj, prop, value) =>
-		// 		{
-		// 			!value ? delete obj[prop] : obj[prop] = value;
-		// 			var allLen = Object.keys(obj).length;
-		// 			// console.log(allLen);
-		// 			if( allLen )
-		// 			{
-		// 				// console.log(allLen, allLen == $scope.filteredRows.length);
-		// 				if( allLen == $scope.filteredRows.length ) $scope.checkAll = true;
-		// 				else $element.find('[ng-model="checkAll"]').prop('indeterminate', true);
-		// 			}
-		// 			else{ $scope.checkAll = false; $element.find('[ng-model="checkAll"]').prop('indeterminate', false) }
-
-		// 			return true;
-		// 		},
-		// 	  get: (obj, prop) => obj[prop]
-		// 	};
-		// 	$scope.selected = {};
-		// 	$scope.selected.ids = new Proxy({}, selectedIdsHandler);
-		// }
 		$scope.selected = {ids: {}}
 		$scope.$watchCollection('filteredRows', (n)=>
 		{ 
