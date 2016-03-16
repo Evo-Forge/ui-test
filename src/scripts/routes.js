@@ -6,6 +6,7 @@ function(module, angular)
 	{
 		return ['$templateRequest', function($templateRequest)
 		{ 
+			// TODO: get url from some setting
 			return $templateRequest('/pub/tpl/'+stateName+'.html').then(function(tpl){ return tpl; });
 		}];
 	},

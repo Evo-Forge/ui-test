@@ -14,7 +14,8 @@ function tableDirective(A)
 				if( !attrs.indeterminate ) return;
 				var boundData = scope.$eval(attrs.indeterminate);
 				if( !A.isArray(boundData) && !A.isObject(boundData) ) return;
-
+				// used to reverse indeterminate -> click behavior
+				var prevStateIndet = false;
 				// watch collection for changes
 				scope.$watchCollection(attrs.indeterminate, newVal =>
 				{
@@ -26,10 +27,12 @@ function tableDirective(A)
 					var allTrue = workArray.every(elem=>elem);
 					elem.prop('checked', allTrue );
 					elem.prop('indeterminate', !allTrue && workArray.some(elem=>elem) )
+					prevStateIndet = elem.prop('indeterminate')
 				} )
-
+				// change/model handler
 				var h = ()=>
 				{
+					if( prevStateIndet ) elem.prop('checked', false);
 					var checked = elem.prop('checked');
 					if( A.isArray(boundData) ) for( let i of boundData ) i = checked;
 					if( A.isObject(boundData) ) for( let i in boundData ) boundData[i] = checked;

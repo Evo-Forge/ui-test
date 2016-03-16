@@ -21,11 +21,6 @@
       tbody(table-chunk="row in data| limitTo: maxRows | filter:query as filteredRows")
         td
           input(type="checkbox", ng-model="selected.ids[row.id]", ng-false-value="undefined")
-        td(ng-repeat="(i, col) in cols") {{row[col]}}
-
-      //- tbody
-      //-   tr(ng-repeat="row in data | limitTo: maxRows | filter:query as filteredRows")
-      //-     td
-      //-       input(type="checkbox", ng-model="selected.ids[row.id]")
-      //-     td(ng-repeat="(i, col) in cols") {{row[col]}}
+        //- TODO: probably not a good idea to use ng-repeat here
+        td(ng-repeat="(i, col) in cols", ng-bind-html="row[col]|highlight:query")
 

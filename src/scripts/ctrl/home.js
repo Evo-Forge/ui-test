@@ -12,8 +12,19 @@ function homeControllerModule( angular, dataSrvMod, table, indet )
 	{
 		return (val) => { var l=0; for( let i in val ) l += val[i]; return l }
 	})
-	.controller('HomeCtrl', [ '$scope', '$timeout', 'api',
-		function($scope, $timeout, api)
+	.filter('highlight', ['$sce', function($sce) 
+	{
+	  return (str, term) =>
+	  {
+	  	if(!term) return $sce.trustAsHtml(String(str));
+	  	let termsToHighlight = term.split(/\s/);
+	    termsToHighlight.sort((a, b)=> b.length - a.length);
+	    let regex = new RegExp('(' + termsToHighlight.join('|') + ')', 'ig');
+	    return $sce.trustAsHtml(String(str).replace(regex, '<span class="hilite">$&</span>'));
+	  }
+	}])
+	.controller('HomeCtrl', [ '$scope', 'api',
+		function($scope, api)
 	{
 		$scope.data = []; // table data
 		$scope.maxRows = 20; // max display rows
