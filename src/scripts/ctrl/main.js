@@ -6,6 +6,6 @@ function mainControllerModule( angular )
 	return angular.module('core.components', [])
 	.controller('MainCtrl', [ '$scope', function($scope)
 	{
-		console.log('main loaded');
+		// console.log('main loaded');
 	}])
 });

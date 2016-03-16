@@ -22,7 +22,7 @@ module.exports = function(config)
     coverageReporter: 
     {
       type : 'html',
-      dir : '../test-report/coverage/'
+      dir : 'test-report/coverage/'
     },
     preprocessors: 
     { 

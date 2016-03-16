@@ -12,7 +12,7 @@ module.exports = function(grunt)
     },
     karma: 
     { 
-      options: { configFile: 'test/karma.conf.js', logLevel: 'DEBUG' },
+      options: { configFile: 'test/karma.conf.js', logLevel: 'ERROR' },
       unit: {} 
     },
     protractor: 
