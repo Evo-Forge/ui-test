@@ -117,18 +117,18 @@ filterApp.controller('filterAppCtrl', ['$scope', '$http',
 		};
 
 		// Setting different filter limit for number or other types
-		$scope.getFilterLength = function (filterText) {
-			if (parseInt(filterText) == filterText) {
-				$scope.filterLength = 1;
+		$scope.getFilterLength = function () {
+			if (!(parseInt($scope.filterTextInput) == $scope.filterTextInput) && $scope.filterTextInput.length < 3) {
+				$scope.filterText = "";
 			}
 			else
-				$scope.filterLength = 3;
+				$scope.filterText = $scope.filterTextInput;
 		}
 
 		// Set initial values
 		$scope.limitLoads = 20;
 		$scope.itemCount = 0;
 		$scope.mainCheckboxVal = "";
-		$scope.filterLength = 3;
+		$scope.filterLength = 1;
 	}
 ]);

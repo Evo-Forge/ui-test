@@ -12,8 +12,8 @@
             <div ng-controller="filterAppCtrl">
                 <div class="header">
                     <div class="headerFilter">
-                        <input placeholder="filter results" class="filterInput" ng-model="filterText" ng-minlength="filterLength" ng-change="getFilterLength(filterText)">
-                        <button type="button" class="filterButton" ng-click='filterText=""'>x</button>
+                        <input type="text" placeholder="filter results" class="filterInput" ng-model="filterTextInput" ng-change="getFilterLength()"/>
+                        <button type="button" class="filterButton" ng-click='filterTextInput=""'>x</button>
                     </div>
                     <div class="headerButtons">
 						<span id="itemCounter">{{itemCount}} items selected</span>
@@ -50,7 +50,7 @@
                             <td>Created on</td>
                             <td>Last modified</td>
                         </tr>
-                        <tr class="tableItem" id={{entry.id}} ng-click="check($event)" ng-repeat="entry in entries | filter: filterText | limitTo: limitLoads" ng-class-odd="'odd'" ng-class-even="'even'">
+                        <tr class="tableItem" id={{entry.id}} ng-click="check($event)" ng-repeat="entry in entries | limitTo: limitLoads | filter: filterText " ng-class-odd="'odd'" ng-class-even="'even'">
                             <td class="checkBox">
                                 <span class="checkBoxText"></span>
                             </td>
