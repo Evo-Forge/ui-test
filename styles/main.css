@@ -1,0 +1,108 @@
+.page {
+  position: relative;
+  padding-top: 100px;
+}
+.page .header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 10px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #efefef;
+  background-color: #ffffff;
+}
+.page .header .headerFilter {
+  float: left;
+}
+.page .header .headerFilter .filterInput {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.page .header .headerFilter .filterButton {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid #ff3333;
+  color: #ffffff;
+  outline: none;
+  background-color: #ff3333;
+}
+.page .header .headerButtons {
+  float: right;
+}
+.page .header .headerButtons #itemCounter {
+  visibility: hidden;
+}
+.page .header .headerButtons .headerButton {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid #cccccc;
+  color: #aaaaaa;
+  outline: none;
+  background-color: transparent;
+}
+.page .header .headerButtons .selectedButton {
+  border: 1px solid #00cccc;
+  color: #ffffff;
+  background-color: #00cccc;
+}
+.page .header .headerButtons .removeButton {
+  border: 1px solid #ff3333;
+  color: #ffffff;
+  background-color: #ff3333;
+}
+.page .dataTable {
+  border: 1px solid gray;
+  border-collapse: collapse;
+  padding: 10px;
+  width: 100%;
+  cursor: default;
+}
+.page .dataTable .tableHeader {
+  font-weight: bold;
+}
+.page .dataTable td {
+  border: 1px solid gray;
+  border-collapse: collapse;
+  padding: 10px;
+}
+.page .dataTable td .id {
+  width: 30px;
+}
+.page .dataTable .odd {
+  background-color: white;
+}
+.page .dataTable .even {
+  background-color: #f5f5f5;
+}
+.page .dataTable .selectedItem {
+  background-color: #ccffff;
+}
+.page .dataTable .checkBox {
+  width: 20px;
+}
+.page .dataTable .checkBox .checkBoxText {
+  display: inline-block;
+  width: 13px;
+  max-width: 13px;
+  height: 13px;
+  max-height: 13px;
+  font-size: 10px;
+  font-family: Arial, sans-serif;
+  font-weight: bolder;
+  text-align: center;
+  color: #777777;
+  line-height: 13px;
+  border: 1px solid #777777;
+  background-color: white;
+}

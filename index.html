@@ -1,0 +1,83 @@
+﻿<html>
+    <head>
+        <title>Test</title>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="styles/main.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	</head>
+	<body>
+        <div class="page" ng-app="filterApp">
+            <div ng-controller="filterAppCtrl">
+                <div class="header">
+                    <div class="headerFilter">
+                        <input type="text" placeholder="filter results" class="filterInput" ng-model="filterTextInput" ng-change="getFilterLength()"/>
+                        <button type="button" class="filterButton" ng-click='filterTextInput=""'>x</button>
+                    </div>
+                    <div class="headerButtons">
+						<span id="itemCounter">{{itemCount}} items selected</span>
+                        <button type="button" class="headerButton headerButton20 selectedButton" ng-click="setTableLimit(20)">
+                            Loaded 20 rows
+                        </button>
+                        <button type="button" class="headerButton headerButton100" ng-click="setTableLimit(100)">
+                            Load 100 rows
+                        </button>
+                        <button type="button" class="headerButton headerButton250" ng-click="setTableLimit(250)">
+                            Load 250 rows
+                        </button>
+                        <button type="button" class="headerButton headerButton500" ng-click="setTableLimit(500)">
+                            Load 500 rows
+                        </button>
+                        <button type="button" class="headerButton headerButton1000" ng-click="setTableLimit(1000)">
+                            Load 1000 rows
+                        </button>
+                        <button type="button" class="headerButton removeButton">
+                            Remove rows
+                        </button>
+                    </div>
+                </div>
+                <table class="dataTable">
+                    <tbody>
+                        <tr class="tableHeader">
+                            <td class="checkBox">
+                                <span class="checkBoxText" ng-click="mainCheckbox()">{{mainCheckboxVal}}</span>
+                            </td>
+                            <td class="id">ID</td>
+                            <td>Name</td>
+                            <td>Owner</td>
+                            <td>Type</td>
+                            <td>Created on</td>
+                            <td>Last modified</td>
+                        </tr>
+                        <tr class="tableItem" id={{entry.id}} ng-click="check($event)" ng-repeat="entry in entries | limitTo: limitLoads | filter: filterText " ng-class-odd="'odd'" ng-class-even="'even'">
+                            <td class="checkBox">
+                                <span class="checkBoxText"></span>
+                            </td>
+                            <td>
+                                <span>{{entry.id}}</span>
+                            </td>
+                            <td>
+                                <span>{{entry.name}}</span>
+                            </td>
+                            <td>
+                                <span>{{entry.owner}}</span>
+                            </td>
+                            <td>
+                                <span>{{entry.type}}</span>
+                            </td>
+                            <td>
+                                <span>{{entry.created_date}}</span>
+                            </td>
+                            <td>
+                                <span>{{entry.modified_date}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+	</body>
+</html>
