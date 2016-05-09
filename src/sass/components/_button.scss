@@ -1,0 +1,23 @@
+.btn {
+  border: 1px solid $buttonBorder;
+  color: $defaultButton;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  span {
+    display: none;
+  }
+  &.reset {
+    border: 1px solid $resetButton;
+    color: $foreground-light;
+    background-color: $resetButton;
+  }
+  &.selected {
+    border: 1px solid $selectedButton;
+    color: $foreground-light;
+    background-color: $selectedButton;
+    span {
+      display: inline;
+    }
+  }
+}
