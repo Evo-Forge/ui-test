@@ -112,6 +112,7 @@ var render = function ($) {
 var filter = function ($) {
 
   var ESCAPE_KEY = 27;
+  var MOUSE_LEFT = 1;
 
   var $input = $('.filterInput'),
       $resetFilter = $('.reset-filter'),
@@ -186,7 +187,7 @@ var filter = function ($) {
    * Reset filter and show all the rows
    */
   function resetFilter(evt) {
-    if (evt.keyCode == 27 || evt.which === 1) {
+    if (evt.keyCode == ESCAPE_KEY || evt.which === MOUSE_LEFT) {
       $input.val('');
       $tr.show();
       $('.highlighted').contents().unwrap();
