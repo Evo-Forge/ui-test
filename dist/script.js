@@ -252,8 +252,16 @@ var select = function ($) {
       $(evt.target).closest('tr').toggleClass('selected').find('.checkBox').toggleClass('checked');
       selectedRows.push($(evt.target).closest('tr').index());
       $mainCheckbox.parent().addClass('indeterminate');
-      selected = selected + 1;
-      showselected(selected);
+      if ($(evt.target).closest('tr').hasClass('selected')) {
+        selected++;
+      } else {
+        selected--;
+      }
+      if (selected > 0) {
+        showselected(selected);
+      } else {
+        hideselected();
+      }
     } else {
       var status = $mainCheckbox.parent().attr('class').trim();
       if (status === 'checkBox') {
@@ -281,7 +289,9 @@ var select = function ($) {
    * Hide selected rows number message
    */
   function hideselected() {
+    $mainCheckbox.parent().attr('class', 'checkBox');
     $messageText.find('.selRows').html('').end().hide();
+    selected = 0;
     selectedRows = [];
   }
 

@@ -428,7 +428,7 @@ header {
 
 .checkBox label {
   position: relative;
-  display: block;
+  display: inline-block;
   width: 13px;
   height: 13px;
   border: 1px solid #777777;
@@ -445,7 +445,8 @@ header {
   line-height: 13px;
   font-size: 1.3rem;
   line-height: 1.3rem;
-  text-align: center; }
+  text-align: center;
+  z-index: 2; }
 .checkBox.indeterminate label:after {
   content: "\2212";
   position: absolute;
