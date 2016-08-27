@@ -51,7 +51,7 @@ Try to maintain the current design. Or if you can surprise us with something pre
 ### Questions
 
 please address them to:
- - [Raul Matei](mailto:raul.matei@evozon.com)
+ - [Raul Matei](mailto:raul.matei@evozon.com)
  - [Andrei Cacio](mailto:andrei.cacio@evozon.com)
 
 ### Happy coding!
