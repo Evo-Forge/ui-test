@@ -1,0 +1,21 @@
+// Basic typography style
+$font-family: 'Arial', sans-serif !default;
+
+// Colors
+$background: rgb(255, 255, 255);
+$foreground-dark: rgb(0, 0, 0);
+$foreground-light: rgb(255, 255, 255);
+$border: rgb(239, 239, 239);
+
+$buttonBorder: rgb(204, 204, 204);
+$defaultButton: rgb(170, 170, 170);
+$selectedButton: rgb(0, 204, 204);
+$resetButton: rgb(255, 51, 51);
+
+$selectedRow: rgb(204, 255, 255);
+$oddRow: rgb(245, 245, 245);
+$cellBorder: rgb(128, 128, 128);
+
+$checkBox: rgb(119, 119, 119);
+
+$highlighted: rgb(204, 255, 153);

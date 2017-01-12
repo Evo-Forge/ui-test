@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ui Test Test Suite</title>
+  <!-- Load local jQuery. This can be overridden with a ?jquery=___ param. -->
+  <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+  <!-- Load local QUnit. -->
+  <link rel="stylesheet" href="../libs/qunit/qunit.css" media="screen">
+
+  <!-- Removing access to jQuery and $. But it'll still be available as _$, if
+       you REALLY want to mess around with jQuery in the console. REMEMBER WE
+       ARE TESTING A PLUGIN HERE, THIS HELPS ENSURE BEST PRACTICES. REALLY. -->
+
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <header>
+      <div class="filter">
+          <input type="text" placeholder="filter results" class="filterInput" />
+          <button type="button" class="btn reset reset-filter">
+              x
+          </button>
+      </div>
+      <div class="buttons">
+          <span class="message-text"><span class="selRows"></span> items selected.</span>
+          <button type="button" class="btn">
+              Load<span>ed</span> 20 rows
+          </button>
+          <button type="button" class="btn">
+              Load<span>ed</span> 100 rows
+          </button>
+          <button type="button" class="btn">
+              Load<span>ed</span> 250 rows
+          </button>
+          <button type="button" class="btn">
+              Load<span>ed</span> 500 rows
+          </button>
+          <button type="button" class="btn">
+              Load<span>ed</span> 1000 rows
+          </button>
+          <button type="button" class="btn reset reset-rows">
+              Remove rows
+          </button>
+      </div>
+  </header>
+  <main>
+      <table id="table">
+
+      </table>
+  </main>
+  <script id="table-template" type="text/x-handlebars-template">
+    <thead>
+        <tr>
+            <th>
+                <span class="checkBox">
+                  <input type="checkbox" id="mainCheckbox" />
+                  <label for="mainCheckbox"></label>
+                </span>
+            </th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Owner</th>
+            <th>Type</th>
+            <th>Created on</th>
+            <th>Last modified</th>
+        </tr>
+    </thead>
+    <tbody>
+      {{#each this}}
+        <tr>
+          <td>
+              <span class="checkBox">
+                <input type="checkbox" id="checkbox-{{id}}" />
+                <label for="checkbox-{{id}}"></label>
+              </span>
+          </td>
+          <td>{{id}}</td>
+          <td>{{name}}</td>
+          <td>{{owner}}</td>
+          <td>{{type}}</td>
+          <td>{{created_date}}</td>
+          <td>{{modified_date}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </script>
+  <script src="../node_modules/handlebars/dist/handlebars.js"></script>
+  <script src="../dist/script.js"></script>
+  <script src="libs/qunit/qunit.js"></script>
+  <!-- Load local lib and tests. -->
+
+  <script src="UI-Test_test.js"></script>
+</body>
+</html>

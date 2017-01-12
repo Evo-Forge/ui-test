@@ -1,0 +1,20 @@
+@charset 'UTF-8';
+
+// Vendors
+@import
+  'vendor/normalize';
+// Configuration, helpers
+@import
+  'util/variables',
+  'util/mixin';
+// General rules
+@import
+  'base/base';
+// Layout-related sections
+@import
+  'layout/header';
+// Components
+@import
+  'components/button',
+  'components/checkbox',
+  'components/table';

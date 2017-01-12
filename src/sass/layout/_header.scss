@@ -1,0 +1,16 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 8px;
+  background-color: $background;
+  border-bottom: 1px solid $border;
+  z-index: 2;
+  .filter {
+    float: left;
+  }
+  .buttons {
+    float: right;
+  }
+}

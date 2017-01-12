@@ -1,0 +1,28 @@
+// Sets up the Base font-size to 10px
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 8px;
+  font-family: $font-family;
+  @include font-size();
+  color: $foreground-dark;
+  background-color: $background;
+}
+main {
+  margin-top: 100px;
+}
+input[type="text"],
+button {
+  margin-right: 10px;
+  padding: 20px;
+  font-weight: bold;
+}
+.message-text,
+input[type=checkbox] {
+  display: none;
+}
+.highlighted{
+  background-color: $highlighted;
+}
