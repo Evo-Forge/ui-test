@@ -2,8 +2,6 @@
 
 ### Data table
 
-The final solution will look and work like this: [live demo](http://raulmatei.com/test)
-
 The solution will be written with JavaScript/HTML/CSS. You have the freedom to work with whatever technology you like *(React / Angular / Ember / others)*. We will provide you with a mock JSON which contains all the necessary data to work with and can be found in the `src/resources` directory of this repository.
 
 ### Specs (which you will also find in the demo)
@@ -46,12 +44,6 @@ Try to maintain the current design. Or if you can surprise us with something pre
  - it's a plus if you use a module system
  - it's a plus if you write your code using ES2015
  - it's a plus if you use some kind of development automatization tool (grunt/gulp/webpack)
-
-
-### Questions
-
-please address them to:
- - [Andrei Cacio](mailto:andrei.cacio@evozon.com)
 
 ### Happy coding!
 
