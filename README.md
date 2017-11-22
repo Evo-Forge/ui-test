@@ -28,6 +28,7 @@ The top havigation has multiple buttons to load or remove all rows, those button
 - when the header checkbox is in the indeterminate state, if clicked it deselects all rows
 - when the header checkbox is in the unchecked state, if clicked it selects all rows
 - there should be a counter indicating how may rows are selected
+- when the table row is clicked the user will navigate to a new page /edit/:id. The page contains a form with the row data, an edit button and SAVE/CANCEL buttons. If the user clicks CANCEL he will navigate back to the table preserving the filters and selections previously applied. Initially the inputs are in a read-only state. When the user clicks the EDIT button the inputs become editable and the user can change the information and SAVE it(it's a plus if you add validations before saving the information). 
 
 
 ####  Design
