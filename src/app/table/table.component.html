@@ -1,0 +1,30 @@
+
+<ngx-datatable
+  class="bootstrap"
+  [rows]="rows"
+  [columnMode]="'force'"
+  [headerHeight]="50"
+  [footerHeight]="50"
+  [rowHeight]="'auto'"
+  [limit]="10"
+  [selected]="selected"
+  [selectionType]="'checkbox'"
+  (activate)="onActivate($event)"
+  (select)='onSelect($event)'>
+  <ngx-datatable-column
+    [width]="30"
+    [sortable]="false"
+    [canAutoResize]="false"
+    [draggable]="false"
+    [resizeable]="false"
+    [headerCheckboxable]="true"
+    [checkboxable]="true">
+  </ngx-datatable-column>
+  <ngx-datatable-column name="ID" [width]="30"></ngx-datatable-column>
+  <ngx-datatable-column name="Name"></ngx-datatable-column>
+  <ngx-datatable-column name="Owner"></ngx-datatable-column>
+  <ngx-datatable-column name="Type"></ngx-datatable-column>
+  <ngx-datatable-column name="Created on" prop="created_date"></ngx-datatable-column>
+  <ngx-datatable-column name="Last modified" prop="modified_date"></ngx-datatable-column>
+
+</ngx-datatable>

@@ -1,0 +1,21 @@
+@import '~@swimlane/ngx-datatable/release/index.css';
+//@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/themes/bootstrap.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+
+.datatable-checkbox {
+  padding: 0;
+}
+
+.ngx-datatable.bootstrap {
+  border: 1px solid lightgray;
+
+  .datatable-body .datatable-body-row.active {
+    background-color: #b3fdfd;
+    color: #000;
+  }
+
+  .datatable-footer {
+    //background: #424242;
+  }
+}

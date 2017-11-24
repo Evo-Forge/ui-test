@@ -1,50 +1,27 @@
-# Practical application test
+# UiTest
 
-### Data table
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.3.
 
-The solution will be written with JavaScript/HTML/CSS. You have the freedom to work with whatever technology you like *(React / Angular / Ember / others)*. We will provide you with a mock JSON which contains all the necessary data to work with and can be found in the `src/resources` directory of this repository.
+## Development server
 
-### Specs (which you will also find in the demo)
+Run `ng serve` for a dev server. Navigate to `http://localhost:4201/`. The app will automatically reload if you change any of the source files.
 
-- the data from the JSON file should be listed in a table like structure and initialy it should display only 20 rows.
+## Code scaffolding
 
-#### Search & highlight feature
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-The table can be filtered via a search query string. The application should have an input where the user
-can search for any string contained in the table. As the user types (more than 3 chars for a string or 1 char for a number), every row not containing the typed string will be removed and only those containing it or a part of it will be displayed. Also, the typed query will be highlighted on the found string in the table.
+## Build
 
-#### Add/remove rows
-The top havigation has multiple buttons to load or remove all rows, those buttons should do what's written on their labels, and when selected it should have the label changed. Also when removing all rows, the remove button should be hidden.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-#### Table interactions
+## Running unit tests
 
-- each row will have a checkbox associated with it
-- the user can select any row from the table when clicking it or by clicking the checkbox associated with that row
-- the user should be able to select all rows by clicking the top checkbox on the first table header
-- the header checkbox will have three states, unchecked, checked and indeterminate, the rules are very simple:
-    1. when nothing is selected, the header checkbox is in the unchecked state
-    2. when one or more rows are selected, but not all, the header checkbox is in the indeterminate state
-    3. when all rows are selected the header checkbox is in the checked state
-- when the header checkbox is in the indeterminate state, if clicked it deselects all rows
-- when the header checkbox is in the unchecked state, if clicked it selects all rows
-- there should be a counter indicating how may rows are selected
-- when the table row is clicked the user will navigate to a new page /edit/:id. The page contains a form with the row data, an edit button and SAVE/CANCEL buttons. If the user clicks CANCEL he will navigate back to the table preserving the filters and selections previously applied. Initially the inputs are in a read-only state. When the user clicks the EDIT button the inputs become editable and the user can change the information and SAVE it(it's a plus if you add validations before saving the information). 
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
+## Running end-to-end tests
 
-####  Design
-Try to maintain the current design. Or if you can surprise us with something prettier we won't say no :)
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-#### Things you should have in mind
+## Further help
 
- - we want to see a well written solution
- - we prefer if you will make a pull request with the final solution
- - it's a plus if you follow an MVC/Flux approach
- - it's a plus if you use a javascript framework
- - it's a plus if you use a CSS preprocessor
- - it's a huge plus if you can add a test suite
- - it's a plus if you use a module system
- - it's a plus if you write your code using ES2015
- - it's a plus if you use some kind of development automatization tool (grunt/gulp/webpack)
-
-### Happy coding!
-
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
