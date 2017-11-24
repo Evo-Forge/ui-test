@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-table',
@@ -14,7 +15,7 @@ export class TableComponent  {
   selected = [];
   rowsCached = [];
 
-  constructor() {
+  constructor(private router: Router) {
     this.load();
   }
 
@@ -38,14 +39,15 @@ export class TableComponent  {
   }
 
   onSelect({ selected }) {
-    // console.log('Select Event', selected, this.selected);
-
     this.selected.splice(0, this.selected.length);
     this.selected.push(...selected);
   }
 
   onActivate(event) {
-    // console.log('Activate Event', event);
+    if ( event.type == "click" && event.cellIndex > 0 ) {
+      console.log(event);
+      this.gotoRow(event.row.id);
+    }
   }
 
   hasRows() {
@@ -54,6 +56,7 @@ export class TableComponent  {
 
   remove() {
     this.rows = this.rows.filter( r => this.selected.indexOf(r) < 0);
+    this.rowsCached = this.rowsCached.filter( r => this.selected.indexOf(r) < 0);
     this.selected = [];
   }
 
@@ -61,7 +64,7 @@ export class TableComponent  {
     const val = event.target.value.toLowerCase();
     const isSearchLength = (Number.parseInt(val) && val.length >= 1 || val.length > 3);
 
-    // filter our data
+    // filter data
     const temp = this.rowsCached.filter((d) => {
       return (!isSearchLength) || !val ||
         (isSearchLength && Object.keys(d).some(k => d[k].toString().toLowerCase().indexOf(val) !== -1));
@@ -72,5 +75,9 @@ export class TableComponent  {
 
     // Whenever the filter changes, always go back to the first page
     //this.table.offset = 0;
+  }
+
+  gotoRow(id) {
+    this.router.navigate(['/edit/' + id]);
   }
 }

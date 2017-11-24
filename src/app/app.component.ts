@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  radioModel: string = '20';
+  //radioModel: string = '20';
 }

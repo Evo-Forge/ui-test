@@ -1,9 +1,6 @@
-<router-outlet></router-outlet>
-
-<!--
 <div class="container mt-2">
 
-  &lt;!&ndash;filter&ndash;&gt;
+  <!--filter-->
   <div class="row">
     <div class="col">
       <input type='text' class="form-control" placeholder='Search ...' (keyup)='table.updateFilter($event)'/>
@@ -40,15 +37,9 @@
     </div>
   </div>
 
-  &lt;!&ndash;table&ndash;&gt;
+  <!--table-->
   <div>
     <app-table #table [totalRows]="radioModel">
     </app-table>
   </div>
 </div>
--->
-
-<!--<app-table-row></app-table-row>-->
-
-
-

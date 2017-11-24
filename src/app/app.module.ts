@@ -6,17 +6,23 @@ import { ButtonsModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
+import { TableRowComponent } from './table-row/table-row.component';
+import { AppRoutingModule } from './app-routing.module';
+import { FilterTableComponent } from './filter-table/filter-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TableComponent
+    TableComponent,
+    TableRowComponent,
+    FilterTableComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ButtonsModule.forRoot(),
-    NgxDatatableModule
+    NgxDatatableModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
