@@ -12,7 +12,7 @@ export class TableComponent  {
 
   rows = [];
   selected = [];
-  temp = [];
+  rowsCached = [];
 
   constructor() {
     this.load();
@@ -21,7 +21,7 @@ export class TableComponent  {
   load() {
     this.fetch((data) => {
       this.rows = data.splice(0, Number.parseInt(this.totalRows) || 20);
-      this.temp = [...this.rows];
+      this.rowsCached = [...this.rows];
     });
     this.selected = [];
   }
@@ -59,16 +59,18 @@ export class TableComponent  {
 
   updateFilter(event) {
     const val = event.target.value.toLowerCase();
+    const isSearchLength = (Number.parseInt(val) && val.length >= 1 || val.length > 3);
 
     // filter our data
-    const temp = this.temp.filter((d) => {
-      return Object.keys(d).some(k => d[k].toString().toLowerCase().indexOf(val) !== -1 || !val);
+    const temp = this.rowsCached.filter((d) => {
+      return (!isSearchLength) || !val ||
+        (isSearchLength && Object.keys(d).some(k => d[k].toString().toLowerCase().indexOf(val) !== -1));
     });
 
     // update the rows
     this.rows = temp;
+
     // Whenever the filter changes, always go back to the first page
     //this.table.offset = 0;
   }
-
 }
