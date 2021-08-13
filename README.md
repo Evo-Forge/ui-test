@@ -2,7 +2,7 @@
 
 ### Data table
 
-The solution will be written with JavaScript/HTML/CSS. You have the freedom to work with whatever technology you like *(React / Angular / Ember / others)*. We will provide you with a mock JSON which contains all the necessary data to work with and can be found in the `src/resources` directory of this repository.
+The solution will be written with JavaScript/HTML/CSS. You have the freedom to work with whatever technology you like *(React / Angular / Vue)*. We will provide you with a mock JSON which contains all the necessary data to work with and can be found in the `src/resources` directory of this repository.
 
 ### Specs (which you will also find in the demo)
 
@@ -38,13 +38,12 @@ Try to maintain the current design. Or if you can surprise us with something pre
 
  - we want to see a well written solution
  - we prefer if you will make a pull request with the final solution
- - it's a plus if you follow an MVC/Flux approach
+ - it's a plus if you follow an Context/Redux approach
  - it's a plus if you use a javascript framework
- - it's a plus if you use a CSS preprocessor
  - it's a huge plus if you can add a test suite
  - it's a plus if you use a module system
- - it's a plus if you write your code using ES2015
- - it's a plus if you use some kind of development automatization tool (grunt/gulp/webpack)
+ - it's a plus if you write your code using ES2015 and above
+ - it's a plus if you use hooks and a functional approach 
 
 ### Happy coding!
 
